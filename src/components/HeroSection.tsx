@@ -74,7 +74,7 @@ export const HeroSection = () => {
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <a href="/resume.pdf" download>
+              <a href="/resume">
                 <Download className="mr-2" size={20} />
                 Download Resume
               </a>

@@ -161,6 +161,20 @@
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
+
+  /* Resume print styles */
+  @media print {
+    .resume-container {
+      background: #fff !important;
+      padding: 0 !important;
+    }
+    
+    .resume {
+      box-shadow: none !important;
+      margin: 0 !important;
+      padding: 20px !important;
+    }
+  }
 }
 
 @layer utilities {
