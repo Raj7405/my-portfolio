@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
 export const HeroSection = () => {
@@ -74,10 +75,10 @@ export const HeroSection = () => {
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <a href="/resume">
+              <Link to="/resume">
                 <Download className="mr-2" size={20} />
                 Download Resume
-              </a>
+              </Link>
             </Button>
           </motion.div>
 
