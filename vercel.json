@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    {
+      "source": "/resume",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/projects/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
