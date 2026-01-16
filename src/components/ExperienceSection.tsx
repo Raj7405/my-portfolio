@@ -19,6 +19,20 @@ const experiences = [
     isCurrent: true,
   },
   {
+    role: "React JS Developer",
+    company: "Freelance",
+    location: "India",
+    duration: "Apr 2024 – Jul 2024",
+    responsibilities: [
+      "Developed front end for Blockchain BNB-based MLM platform.",
+      "Implemented 3D model UI features for enhanced interactivity.",
+      "Designed admin panel to manage users and perform administrative operations.",
+      "Integrated backend and blockchain functionality with frontend components.",
+      "Established session management and state management for improved user experience.",
+    ],
+    isCurrent: false,
+  },
+  {
     role: "React JS Developer Trainee",
     company: "Tagline Infotech",
     location: "India",
