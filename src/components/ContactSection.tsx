@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
+import { profile } from "@/content/profile";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -10,19 +11,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "rajendra.m.chaudhari7405@gmail.com",
-    href: "mailto:rajendra.m.chaudhari7405@gmail.com",
+    value: profile.email,
+    href: `mailto:${profile.email}`,
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 7405909258",
+    value: profile.phone,
     href: "tel:+917405909258",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "Surat, Gujarat 395007",
+    value: profile.location,
     href: null,
   },
 ];
@@ -31,12 +32,12 @@ const socialLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://linkedin.com/in/rajendra-chaudhari-079",
+    href: profile.social.linkedin,
   },
   {
     icon: Github,
     label: "GitHub",
-    href: "https://github.com/Raj7405/",
+    href: profile.social.github,
   },
 ];
 

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Mail } from "lucide-react";
+import { profile } from "@/content/profile";
 import { Button } from "./ui/button";
 
 export const HeroSection = () => {
@@ -34,7 +35,7 @@ export const HeroSection = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight"
           >
             Hi, I'm{" "}
-            <span className="text-gradient">Rajendra Chaudhari</span>
+            <span className="text-gradient">{profile.name}</span>
           </motion.h1>
 
           {/* Role */}
@@ -44,7 +45,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl text-muted-foreground mb-6"
           >
-            Frontend Developer
+            {profile.title}
           </motion.p>
 
           {/* Summary */}
@@ -54,10 +55,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Crafting dynamic and efficient web solutions with{" "}
-            <span className="text-foreground font-medium">Next.js</span> and{" "}
-            <span className="text-foreground font-medium">React</span>. 
-            Passionate about creating intuitive interfaces that drive engagement and satisfaction.
+            {profile.summary}
           </motion.p>
 
           {/* CTA Buttons */}

@@ -29,8 +29,8 @@ export const ProjectsSection = () => {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            A selection of projects showcasing my expertise in frontend development, 
-            payment integration, and modern web technologies.
+            Production SaaS platforms, full-stack healthcare applications,
+            and AI-powered developer tooling.
           </p>
         </motion.div>
 

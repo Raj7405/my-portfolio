@@ -2,16 +2,17 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Calendar, MapPin, GraduationCap, Code2 } from "lucide-react";
+import { profile } from "@/content/profile";
 
 export const AboutSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const stats = [
-    { label: "Years Experience", value: "1.5+", icon: Calendar },
-    { label: "Location", value: "Surat, India", icon: MapPin },
-    { label: "Degree", value: "B.E. Computer Eng.", icon: GraduationCap },
-    { label: "Focus", value: "Frontend Dev", icon: Code2 },
+    { label: "Years Experience", value: `${profile.yearsOfExperience}`, icon: Calendar },
+    { label: "Location", value: profile.locationShort, icon: MapPin },
+    { label: "Degree", value: profile.education.degree, icon: GraduationCap },
+    { label: "Focus", value: "Full-Stack SaaS", icon: Code2 },
   ];
 
   return (
@@ -29,7 +30,7 @@ export const AboutSection = () => {
               About Me
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
-              Passionate Frontend Developer
+              Passionate Software Engineer
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           </div>
@@ -44,24 +45,14 @@ export const AboutSection = () => {
               className="lg:col-span-3 space-y-6"
             >
               <p className="text-muted-foreground text-lg leading-relaxed">
-                With over 1.5 years of experience as a Frontend Developer and a 
-                robust academic background in Computer Engineering from Pacific 
-                School of Engineering (GTU), I am dedicated to crafting dynamic 
-                and efficient web solutions.
+                {profile.summary}
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                My expertise lies in leveraging <span className="text-foreground font-medium">Next.js</span> and{" "}
-                <span className="text-foreground font-medium">React</span> to deliver exceptional user experiences 
-                that drive engagement and satisfaction. I have a strong commitment to continuous 
-                learning and innovation, which enables me to adapt to evolving technologies 
-                and industry trends.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                I'm passionate about creating intuitive interfaces and enhancing usability 
-                across every project I undertake. Currently working at{" "}
-                <span className="text-primary font-medium">Appscrip Embedd Software Technologies</span>, 
-                where I focus on website optimization, payment integration, and SEO-optimized 
-                development.
+                I hold a <span className="text-foreground font-medium">{profile.education.degree}</span> from{" "}
+                <span className="text-foreground font-medium">{profile.education.school}</span> (CGPA: {profile.education.gpa}).
+                Currently working as a Software Developer at{" "}
+                <span className="text-primary font-medium">3Embed Software Technologies (Appscrip)</span> in Bangalore,
+                building scalable SaaS applications across the full development lifecycle — from frontend interfaces and backend APIs to database integration and production deployment.
               </p>
             </motion.div>
 

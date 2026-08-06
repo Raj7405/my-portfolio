@@ -1,50 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Building2, Calendar, MapPin } from "lucide-react";
-
-const experiences = [
-  {
-    role: "Front End Developer",
-    company: "Appscrip Embedd Software Technologies Pvt. Ltd.",
-    location: "Surat, India",
-    duration: "Aug 2024 – Present",
-    responsibilities: [
-      "Website Optimization: Improved site performance and speed by 20–30% through code refactoring and modern web standards.",
-      "Payment Integration: Designed and implemented a secure payment processing system using Stripe API.",
-      "API Security: Created frontend middleware APIs to protect API keys and sensitive information.",
-      "SEO & Marketing: Built SEO-optimized landing pages with the marketing team to increase user acquisition.",
-      "Headless CMS: Developed a dynamic and maintainable CMS using Strapi.",
-      "UI/UX Development: Created responsive, accessible, and user-friendly interfaces using Bootstrap, Material-UI, and Ant Design.",
-    ],
-    isCurrent: true,
-  },
-  {
-    role: "React JS Developer",
-    company: "Freelance",
-    location: "India",
-    duration: "Apr 2024 – Jul 2024",
-    responsibilities: [
-      "Developed front end for Blockchain BNB-based MLM platform.",
-      "Implemented 3D model UI features for enhanced interactivity.",
-      "Designed admin panel to manage users and perform administrative operations.",
-      "Integrated backend and blockchain functionality with frontend components.",
-      "Established session management and state management for improved user experience.",
-    ],
-    isCurrent: false,
-  },
-  {
-    role: "React JS Developer Trainee",
-    company: "Tagline Infotech",
-    location: "India",
-    duration: "Apr 2024 – Jul 2024",
-    responsibilities: [
-      "Learned JavaScript, React.js, and libraries such as react-router-dom and Redux.",
-      "Created small-scale projects during the training period.",
-      "Contributed to live projects by refactoring code and building components like multi-step forms and credit card validation forms.",
-    ],
-    isCurrent: false,
-  },
-];
+import { experiences } from "@/content/experience";
 
 export const ExperienceSection = () => {
   const ref = useRef(null);
@@ -134,6 +91,26 @@ export const ExperienceSection = () => {
                     </li>
                   ))}
                 </ul>
+
+                {/* Key Project */}
+                {exp.keyProject && (
+                  <div className="mt-6 pt-6 border-t border-border">
+                    <h4 className="text-sm font-semibold text-primary mb-3">
+                      Key Project: {exp.keyProject.title}
+                    </h4>
+                    <ul className="space-y-2">
+                      {exp.keyProject.bullets.map((item, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-3 text-muted-foreground text-sm"
+                        >
+                          <span className="w-1 h-1 rounded-full bg-primary/60 mt-2 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

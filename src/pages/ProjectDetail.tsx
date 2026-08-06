@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Layers, CheckCircle2, Link2, Image as ImageIcon, ArrowLeft } from "lucide-react";
+import { ExternalLink, Github, Layers, CheckCircle2, Link2, ArrowLeft } from "lucide-react";
 import { getProjectBySlug, type Project } from "@/fixtures/projects";
+import { ProjectProofGallery } from "@/components/ProjectProofGallery";
 // Future: Use React Query for data fetching
 // import { useQuery } from "@tanstack/react-query";
 
@@ -185,43 +186,7 @@ const ProjectDetail = () => {
 
           {/* Proof/Evidence */}
           {project.proof && project.proof.length > 0 && (
-            <div className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4 text-foreground flex items-center gap-2">
-                <ImageIcon size={24} className="text-primary" />
-                Project Proof
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {project.proof.map((item, idx) => (
-                  <div key={idx} className="rounded-lg overflow-hidden border border-border">
-                    {item.type === "image" && (
-                      <div className="relative">
-                        <img
-                          src={item.url}
-                          alt={item.title || `Proof ${idx + 1}`}
-                          className="w-full h-64 object-cover"
-                        />
-                        {item.title && (
-                          <div className="absolute bottom-0 left-0 right-0 bg-background/90 backdrop-blur-sm p-3">
-                            <p className="text-sm font-medium text-foreground">{item.title}</p>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                    {item.type === "link" && (
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block p-6 hover:bg-secondary transition-colors"
-                      >
-                        <ExternalLink size={20} className="inline-block mr-2 text-primary" />
-                        <span className="text-foreground font-medium">{item.title || "View Link"}</span>
-                      </a>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <ProjectProofGallery proof={project.proof} />
           )}
         </div>
       </main>

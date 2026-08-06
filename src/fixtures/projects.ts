@@ -20,152 +20,87 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    slug: "e-commerce-platform",
-    title: "E-Commerce Platform",
+    slug: "flexcrew-job-portal",
+    title: "Commercial Employer & Worker Portal",
     description:
-      "A full-featured e-commerce platform with Stripe payment integration, dynamic product catalog, and SEO-optimized pages. Built with Next.js and Strapi CMS.",
-    tech: ["Next.js", "React", "Strapi", "Stripe", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-    category: "Full Stack",
-    detailedDescription: "A comprehensive e-commerce solution built from the ground up, featuring a modern tech stack and seamless user experience. The platform handles everything from product management to secure payment processing.",
+      "Multi-role SaaS platform for workers and employers — end-to-end frontend development with authentication, job posting, worker onboarding, and application tracking.",
+    tech: ["Next.js", "React.js", "MQTT", "Redux", "Strapi CMS", "Firebase", "Bitbucket"],
+    image: "/projects-images/flexcrew.png",
+    category: "Production SaaS",
+    detailedDescription:
+      "Led the end-to-end frontend development of a multi-role SaaS platform for workers and employers, delivering responsive and scalable user experiences from requirement analysis to production deployment.",
     whatWeDid: [
-      "Implemented Stripe payment gateway with secure checkout flow",
-      "Built dynamic product catalog with filtering and search functionality",
-      "Created SEO-optimized pages with meta tags and structured data",
-      "Integrated Strapi CMS for content management",
-      "Developed responsive design with Tailwind CSS",
-      "Optimized performance with Next.js server-side rendering"
+      "Architected reusable UI components, custom hooks, higher-order components (HOCs), shared utility functions, and common styling systems — reducing duplicate code by ~30%.",
+      "Built complex multi-step workflows including authentication, profile management, job posting, worker onboarding, application tracking, and form validation with optimized state management.",
+      "Integrated 100+ internal and third-party REST APIs with secure authentication, middleware-based request handling, and environment-driven configuration.",
+      "Developed SEO-optimized landing pages using Next.js, improving organic search visibility and increasing website traffic by 25–30%.",
+      "Collaborated with Product, Design, QA, and Backend teams using Agile practices, Git workflows, code reviews, and CI/CD pipelines.",
     ],
-    liveLink: "https://example-ecommerce.com",
-    githubLink: "https://github.com/example/ecommerce",
+    liveLink: "https://website.flexcrewusa.com/",
     proof: [
-      { type: "image", url: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop", title: "Homepage" },
-      { type: "image", url: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop", title: "Product Page" }
-    ]
+      { type: "image", url: "/projects-images/Flexcrew-proofs/home-screen-hero.png", title: "Home — Hero Section" },
+      { type: "image", url: "/projects-images/Flexcrew-proofs/home-screen-how-it-works.png", title: "Home — How It Works" },
+      { type: "image", url: "/projects-images/Flexcrew-proofs/employer-job-posting-screen.png", title: "Employer — Job Posting" },
+      { type: "image", url: "/projects-images/Flexcrew-proofs/employer-my-shift.png", title: "Employer — My Shifts" },
+      { type: "image", url: "/projects-images/Flexcrew-proofs/employer-shift-approval-screen.png", title: "Employer — Shift Approval" },
+      { type: "image", url: "/projects-images/Flexcrew-proofs/worker-new-job-screen.png", title: "Worker — New Jobs" },
+      { type: "image", url: "/projects-images/Flexcrew-proofs/worker-my-job-screen.png", title: "Worker — My Jobs" },
+      { type: "image", url: "/projects-images/Flexcrew-proofs/worker-history-screen.png", title: "Worker — Job History" },
+      { type: "image", url: "/projects-images/Flexcrew-proofs/worker-waller-screen.png", title: "Worker — Wallet" },
+    ],
   },
   {
     id: "2",
-    slug: "seo-landing-pages",
-    title: "SEO Landing Pages",
+    slug: "care-connect",
+    title: "Care Connect — Healthcare Booking Platform",
     description:
-      "High-performance, SEO-optimized landing pages built for marketing campaigns. Achieved 20-30% improvement in site performance through modern web standards.",
-    tech: ["Next.js", "Tailwind CSS", "SEO", "Analytics"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-    category: "Marketing",
-    detailedDescription: "A series of high-converting landing pages designed for marketing campaigns, optimized for search engines and user engagement.",
+      "Full-stack healthcare platform with React frontend and Node.js/Express REST APIs for appointment booking, provider management, and real-time updates.",
+    tech: ["React.js", "TypeScript", "Node.js", "Express.js", "MongoDB", "Firebase", "MQTT", "Stripe", "Google Maps"],
+    image: "/projects-images/mobile-medical.png",
+    category: "Full Stack",
+    detailedDescription:
+      "Developed a full-stack healthcare platform by building responsive React interfaces and Node.js/Express REST APIs for appointment booking, provider management, and user workflows.",
     whatWeDid: [
-      "Achieved 20-30% performance improvement through code optimization",
-      "Implemented comprehensive SEO strategies with meta tags and schema",
-      "Built responsive designs for all device sizes",
-      "Integrated analytics for conversion tracking",
-      "Optimized Core Web Vitals for better search rankings",
-      "Created A/B testing framework for campaign optimization"
+      "Designed secure backend services with authentication, request validation, and database operations, integrating MongoDB, Firebase, and third-party APIs.",
+      "Built real-time features using MQTT and Firebase Cloud Messaging (FCM) for live appointment updates, notifications, and location tracking.",
+      "Integrated Stripe payments, Google Maps, and Typesense search for secure transactions, location-aware provider discovery, and relevance-ranked search.",
+      "Optimized frontend performance using TanStack Query for API caching, background synchronization, and efficient server-state management.",
+      "Collaborated across the full development lifecycle — API design, frontend implementation, debugging, testing, and deployment.",
     ],
-    liveLink: "https://example-landing.com",
     proof: [
-      { type: "image", url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop", title: "Landing Page Design" }
-    ]
+      { type: "image", url: "/projects-images/MMD-proof/home-service-screen.png", title: "Home — Service Selection" },
+      { type: "image", url: "/projects-images/MMD-proof/doctor-listing-screen.png", title: "Doctor Listing" },
+      { type: "image", url: "/projects-images/MMD-proof/doctor-appointment-schedule-screen.png", title: "Appointment Scheduling" },
+      { type: "image", url: "/projects-images/MMD-proof/cart-screen.png", title: "Cart" },
+      { type: "image", url: "/projects-images/MMD-proof/order-tracking.png", title: "Order Tracking" },
+      { type: "image", url: "/projects-images/MMD-proof/subcription-flow.png", title: "Subscription Flow" },
+      { type: "image", url: "/projects-images/MMD-proof/profile-screen.png", title: "Profile" },
+    ],
   },
   {
     id: "3",
-    slug: "headless-cms-dashboard",
-    title: "Headless CMS Dashboard",
+    slug: "ai-developer-productivity",
+    title: "AI Developer Productivity & Task Automation Tool",
     description:
-      "A dynamic and maintainable content management system built with Strapi, featuring custom content types and user-friendly admin interface.",
-    tech: ["Strapi", "Node.js", "React", "REST API"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    category: "Backend",
-    detailedDescription: "A powerful headless CMS solution that provides flexible content management capabilities with a modern admin interface.",
+      "AI-powered engineering platform that analyzes commits, detects repositories, generates AI-assisted effort estimates, and produces structured progress reports.",
+    tech: ["React", "TypeScript", "OpenAI SDK", "Bitbucket", "GitHub"],
+    image: "/projects-images/ai-assistance.png",
+    category: "Internal Tool",
+    detailedDescription:
+      "Developed an AI-powered engineering productivity platform that automatically analyzes commits, detects repositories, generates AI-assisted effort estimates, and produces structured progress reports.",
     whatWeDid: [
-      "Designed and implemented custom content types in Strapi",
-      "Built RESTful APIs for content delivery",
-      "Created user-friendly admin dashboard",
-      "Implemented role-based access control",
-      "Developed custom plugins for extended functionality",
-      "Set up automated content workflows"
+      "Built an AI-powered platform that analyzes commits, detects repositories, and generates AI-assisted effort estimates.",
+      "Implemented AI-driven task summarization and developer activity tracking, reducing manual reporting effort by 70%+.",
+      "Leveraged LLM-assisted workflows and prompt engineering to improve sprint visibility and engineering productivity.",
     ],
-    githubLink: "https://github.com/example/cms",
-    proof: [
-      { type: "image", url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop", title: "CMS Dashboard" }
-    ]
-  },
-  {
-    id: "4",
-    slug: "payment-processing-system",
-    title: "Payment Processing System",
-    description:
-      "Secure payment processing integration using Stripe API with frontend middleware for API key protection and enhanced security measures.",
-    tech: ["Stripe API", "React", "Node.js", "Security"],
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-    category: "Fintech",
-    detailedDescription: "A secure payment processing system that protects sensitive data while providing a smooth checkout experience.",
-    whatWeDid: [
-      "Integrated Stripe payment gateway with secure tokenization",
-      "Created frontend middleware to protect API keys",
-      "Implemented PCI DSS compliance measures",
-      "Built error handling and retry mechanisms",
-      "Developed payment webhook handlers",
-      "Added comprehensive logging and monitoring"
-    ],
-    proof: [
-      { type: "image", url: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=800&fit=crop", title: "Payment Flow" }
-    ]
-  },
-  {
-    id: "5",
-    slug: "multi-step-form-component",
-    title: "Multi-Step Form Component",
-    description:
-      "Reusable multi-step form component with validation, progress tracking, and credit card validation. Built during training at Tagline Infotech.",
-    tech: ["React.js", "Redux", "Form Validation"],
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
-    category: "Component",
-    detailedDescription: "A highly reusable form component that handles complex multi-step workflows with validation and state management.",
-    whatWeDid: [
-      "Built multi-step form with progress indicator",
-      "Implemented comprehensive form validation",
-      "Added credit card validation with Luhn algorithm",
-      "Integrated Redux for state management",
-      "Created reusable form field components",
-      "Added accessibility features (ARIA labels, keyboard navigation)"
-    ],
-    githubLink: "https://github.com/example/multistep-form",
-    proof: [
-      { type: "image", url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=800&fit=crop", title: "Form Component" }
-    ]
-  },
-  {
-    id: "6",
-    slug: "responsive-ui-components",
-    title: "Responsive UI Components",
-    description:
-      "Collection of accessible, responsive UI components built with Bootstrap, Material-UI, and Ant Design for various client projects.",
-    tech: ["Bootstrap", "Material-UI", "Ant Design", "React"],
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop",
-    category: "UI/UX",
-    detailedDescription: "A comprehensive library of accessible and responsive UI components designed for various client projects.",
-    whatWeDid: [
-      "Created responsive components with Bootstrap",
-      "Built Material Design components with Material-UI",
-      "Developed custom components with Ant Design",
-      "Ensured WCAG accessibility compliance",
-      "Implemented dark mode support",
-      "Created comprehensive component documentation"
-    ],
-    githubLink: "https://github.com/example/ui-components",
-    proof: [
-      { type: "image", url: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1200&h=800&fit=crop", title: "Component Library" }
-    ]
+    proof: [{ type: "image", url: "/projects-images/ai-assistance.png", title: "Dashboard" }],
   },
 ];
 
-// Helper function to get project by slug
 export const getProjectBySlug = (slug: string): Project | undefined => {
-  return projects.find(project => project.slug === slug);
+  return projects.find((project) => project.slug === slug);
 };
 
-// Helper function to get project by id
 export const getProjectById = (id: string): Project | undefined => {
-  return projects.find(project => project.id === id);
+  return projects.find((project) => project.id === id);
 };
-

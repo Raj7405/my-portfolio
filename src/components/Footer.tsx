@@ -1,21 +1,23 @@
 import { motion } from "framer-motion";
 import { Heart, Linkedin, Github, Mail } from "lucide-react";
 
+import { profile } from "@/content/profile";
+
 const socialLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://linkedin.com/in/rajendra-chaudhari-079",
+    href: profile.social.linkedin,
   },
   {
     icon: Github,
     label: "GitHub",
-    href: "https://github.com/Raj7405/",
+    href: profile.social.github,
   },
   {
     icon: Mail,
     label: "Email",
-    href: "mailto:rajendra.m.chaudhari7405@gmail.com",
+    href: `mailto:${profile.email}`,
   },
 ];
 
