@@ -70,16 +70,16 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
-            <Button variant="hero" size="xl" asChild>
+            <Button variant="hero" asChild>
               <a href="#contact">
-                <Mail className="mr-2" size={20} />
+                <Mail className="mr-2" size={16} />
                 Contact Me
               </a>
             </Button>
-            <Button variant="heroOutline" size="xl" asChild>
+            <Button variant="heroOutline" asChild>
               <Link to="/resume">
-                <Download className="mr-2" size={20} />
-                Download Resume
+                <Download className="mr-2" size={16} />
+                View Resume
               </Link>
             </Button>
           </motion.div>
