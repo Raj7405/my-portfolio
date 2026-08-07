@@ -218,7 +218,7 @@ export const Navbar = () => {
           whileTap={{ scale: 0.97 }}
           className="group relative z-10 flex shrink-0 items-center gap-2.5 cursor-pointer"
         >
-          <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border border-primary/25 bg-primary/10 text-sm font-bold text-primary shadow-[inset_0_1px_0_hsl(var(--foreground)/0.08)] transition-colors duration-[280ms] group-hover:border-primary/55 group-hover:bg-primary/18">
+          <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border border-primary/25 bg-primary/10 font-mono text-sm font-bold text-primary shadow-[inset_0_1px_0_hsl(var(--foreground)/0.08)] transition-colors duration-[280ms] group-hover:border-primary/55 group-hover:bg-primary/18">
             RC
             <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-primary/20 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
           </span>
@@ -251,7 +251,7 @@ export const Navbar = () => {
                   }}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="relative z-10 cursor-pointer px-3.5 py-2 text-sm font-medium transition-colors duration-200 lg:px-4"
+                  className="relative z-10 cursor-pointer px-3.5 py-2 font-mono text-[13px] font-medium transition-colors duration-200 lg:px-4"
                 >
                   <span
                     className={cn(
@@ -359,7 +359,7 @@ export const Navbar = () => {
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}
                       className={cn(
-                        "flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-all duration-200",
+                        "flex items-center justify-between rounded-xl px-4 py-3 font-mono text-sm font-medium transition-all duration-200",
                         isActive
                           ? "border border-primary/30 bg-primary/10 text-primary"
                           : "text-muted-foreground hover:bg-secondary/80 hover:text-foreground"

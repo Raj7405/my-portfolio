@@ -23,13 +23,13 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="surface-chip inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
+            className="surface-chip inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 font-mono text-xs tracking-wide"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            <span className="text-sm text-muted-foreground">Available for opportunities</span>
+            <span className="text-muted-foreground">Available for opportunities</span>
           </motion.div>
 
           {/* Name */}
@@ -48,7 +48,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-6"
+            className="font-mono text-sm md:text-base text-muted-foreground mb-6"
           >
             {profile.title}
           </motion.p>

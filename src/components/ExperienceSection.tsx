@@ -17,9 +17,7 @@ export const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-            Career Journey
-          </span>
+          <span className="section-eyebrow">// Career Journey</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
             Work Experience
           </h2>
@@ -54,7 +52,7 @@ export const ExperienceSection = () => {
               <div className="surface p-6 rounded-2xl card-hover">
                 {/* Status Badge */}
                 {exp.isCurrent && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary text-xs font-medium mb-4 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.06)]">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 font-mono text-primary text-xs font-medium mb-4 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.06)]">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                     Current Role
                   </span>

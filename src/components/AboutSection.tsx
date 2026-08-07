@@ -26,9 +26,7 @@ export const AboutSection = () => {
         >
           {/* Section Header */}
           <div className="text-center mb-16">
-            <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-              About Me
-            </span>
+            <span className="section-eyebrow">// About Me</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
               Passionate Software Engineer
             </h2>

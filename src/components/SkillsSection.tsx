@@ -28,9 +28,7 @@ export const SkillsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-            Technical Expertise
-          </span>
+          <span className="section-eyebrow">// Technical Expertise</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
             Skills & Technologies
           </h2>
