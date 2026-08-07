@@ -9,23 +9,23 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
+import { NAV_OFFSET } from "@/constants/layout";
+
 const Index = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Handle hash scrolling when page loads or hash changes
     if (location.hash) {
-      const hash = location.hash.substring(1); // Remove the '#'
+      const hash = location.hash.substring(1);
       setTimeout(() => {
         const element = document.getElementById(hash);
         if (element) {
-          const offset = 80; // Account for fixed navbar
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          const offsetPosition =
+            element.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
 
           window.scrollTo({
             top: offsetPosition,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         }
       }, 100);

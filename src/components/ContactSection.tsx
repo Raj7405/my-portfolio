@@ -82,9 +82,7 @@ export const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-            Get in Touch
-          </span>
+          <span className="section-eyebrow">// Get in Touch</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
             Let's Work Together
           </h2>
@@ -111,7 +109,7 @@ export const ContactSection = () => {
                 {contactInfo.map((info) => (
                   <div
                     key={info.label}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border"
+                    className="surface flex items-center gap-4 p-4 rounded-xl card-hover"
                   >
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                       <info.icon className="w-5 h-5 text-primary" />
@@ -146,7 +144,7 @@ export const ContactSection = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all card-hover"
+                    className="surface w-12 h-12 rounded-xl flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-[280ms] card-hover"
                     aria-label={social.label}
                   >
                     <social.icon size={20} />
@@ -164,7 +162,7 @@ export const ContactSection = () => {
           >
             <form
               onSubmit={handleSubmit}
-              className="p-8 rounded-2xl bg-card border border-border"
+              className="surface p-8 rounded-2xl"
             >
               <h3 className="text-xl font-semibold text-foreground mb-6">
                 Send a Message
@@ -187,7 +185,6 @@ export const ContactSection = () => {
                       setFormData({ ...formData, name: e.target.value })
                     }
                     required
-                    className="bg-secondary border-border focus:border-primary"
                   />
                 </div>
 
@@ -207,7 +204,6 @@ export const ContactSection = () => {
                       setFormData({ ...formData, email: e.target.value })
                     }
                     required
-                    className="bg-secondary border-border focus:border-primary"
                   />
                 </div>
 
@@ -227,7 +223,7 @@ export const ContactSection = () => {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     required
-                    className="bg-secondary border-border focus:border-primary resize-none"
+                    className="resize-none"
                   />
                 </div>
 
