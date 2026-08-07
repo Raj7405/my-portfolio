@@ -10,7 +10,7 @@ export const ProjectsSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="projects" className="section-padding bg-card/30 relative" ref={ref}>
+    <section id="projects" className="section-padding section-muted relative" ref={ref}>
       <div className="absolute inset-0 grid-pattern opacity-30" />
       
       <div className="container mx-auto px-6 relative z-10">
@@ -43,7 +43,7 @@ export const ProjectsSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => navigate(`/projects/${project.slug}`)}
-              className="group rounded-2xl bg-card border border-border overflow-hidden card-hover cursor-pointer"
+              className="group surface rounded-2xl overflow-hidden card-hover cursor-pointer"
             >
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
@@ -56,7 +56,7 @@ export const ProjectsSection = () => {
                 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-background/80 backdrop-blur-sm text-xs font-medium text-foreground">
+                  <span className="surface-chip inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium text-foreground">
                     <Layers size={12} className="text-primary" />
                     {project.category}
                   </span>
@@ -82,13 +82,13 @@ export const ProjectsSection = () => {
                   {project.tech.slice(0, 4).map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs px-2 py-1 rounded-md bg-secondary text-muted-foreground"
+                      className="chip-sm"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.tech.length > 4 && (
-                    <span className="text-xs px-2 py-1 rounded-md bg-secondary text-muted-foreground">
+                    <span className="chip-sm">
                       +{project.tech.length - 4}
                     </span>
                   )}

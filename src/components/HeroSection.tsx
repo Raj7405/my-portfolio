@@ -3,10 +3,14 @@ import { ArrowDown, Download, Mail } from "lucide-react";
 import { profile } from "@/content/profile";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
+import { NAV_HEIGHT } from "@/constants/layout";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden noise-overlay">
+    <section
+      className="relative flex min-h-screen items-center justify-center overflow-hidden noise-overlay"
+      style={{ paddingTop: NAV_HEIGHT }}
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 grid-pattern opacity-50" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[120px]" />
@@ -19,7 +23,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8"
+            className="surface-chip inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>

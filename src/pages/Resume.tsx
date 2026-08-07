@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { NAV_HEIGHT } from "@/constants/layout";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Resume } from "@/components/Resume";
@@ -85,7 +85,7 @@ const ResumePage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="py-20">
+      <main style={{ paddingTop: NAV_HEIGHT }} className="pb-20">
         <div className="container mx-auto px-6">
           <div className="flex justify-center mb-6">
             <Button 

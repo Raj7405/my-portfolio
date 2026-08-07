@@ -69,7 +69,7 @@ export const AboutSection = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                  className="p-5 rounded-xl bg-card border border-border card-hover"
+                  className="surface p-5 rounded-xl card-hover"
                 >
                   <stat.icon className="w-6 h-6 text-primary mb-3" />
                   <p className="text-xl font-bold text-foreground">{stat.value}</p>
