@@ -41,7 +41,7 @@ export const ExperienceSection = () => {
             >
               {/* Timeline Dot */}
               <div
-                className={`absolute left-0 md:left-1/2 top-0 w-4 h-4 rounded-full border-4 transform md:-translate-x-1/2 ${
+                className={`absolute -left-2 md:left-1/2 top-0 w-4 h-4 rounded-full border-4 transform md:-translate-x-1/2 ${
                   exp.isCurrent
                     ? "bg-primary border-primary animate-pulse-glow"
                     : "bg-background border-primary"

@@ -118,7 +118,7 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="section-padding relative" ref={ref}>
       {/* Background Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 max-w-[800px] w-full h-[400px] bg-primary/10 rounded-full blur-[120px]" />
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -208,7 +208,7 @@ export const ContactSection = () => {
           >
             <form
               onSubmit={handleSubmit}
-              className="surface p-8 rounded-2xl"
+              className="surface md:p-8 p-5 rounded-2xl"
             >
               <h3 className="text-xl font-semibold text-foreground mb-6">
                 Send a Message
