@@ -56,7 +56,7 @@ export const ProjectProofGallery = ({ proof }: ProjectProofGalleryProps) => {
   const activeImage = lightboxIndex !== null ? images[lightboxIndex] : null;
 
   return (
-    <section className="relative mb-8 overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-b from-card/80 to-background p-6 md:p-8">
+    <section className="relative mb-8 overflow-hidden rounded-2xl surface p-6 md:p-8">
       <div className="pointer-events-none absolute inset-0 grid-pattern opacity-20" />
       <div className="pointer-events-none absolute -top-24 left-1/2 h-48 w-96 -translate-x-1/2 rounded-full bg-primary/10 blur-[100px]" />
 
@@ -74,7 +74,7 @@ export const ProjectProofGallery = ({ proof }: ProjectProofGalleryProps) => {
           </p>
         </div>
         {images.length > 0 && (
-          <div className="flex items-center gap-2 rounded-full border border-border bg-background/60 px-4 py-2 text-sm text-muted-foreground backdrop-blur-sm">
+          <div className="surface-chip flex items-center gap-2 rounded-full px-4 py-2 text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">{images.length}</span>
             screens
           </div>
@@ -93,8 +93,8 @@ export const ProjectProofGallery = ({ proof }: ProjectProofGalleryProps) => {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               onClick={() => setLightboxIndex(index)}
               className={cn(
-                "group relative overflow-hidden rounded-xl border border-border/70 bg-background/50 text-left shadow-sm transition-all duration-300",
-                "hover:border-primary/40 hover:shadow-[0_8px_40px_hsl(172,66%,50%,0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                "group relative overflow-hidden rounded-xl surface text-left transition-all duration-[280ms]",
+                "hover:border-primary/40 hover:shadow-[var(--shadow-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50",
                 index === 0 && "sm:col-span-2 lg:col-span-2"
               )}
             >
@@ -140,7 +140,7 @@ export const ProjectProofGallery = ({ proof }: ProjectProofGalleryProps) => {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-background/60 px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:bg-primary/10"
+              className="surface-chip inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:bg-primary/10"
             >
               <ExternalLink size={16} className="text-primary" />
               {item.title || "View Link"}

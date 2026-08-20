@@ -49,30 +49,76 @@ export const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
+    botcheck: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      toast({
+        title: "Configuration error",
+        description: "Contact form is not configured. Please try again later.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
-    
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || "Not provided",
+          message: formData.message,
+          subject: `Portfolio contact from ${formData.name}`,
+          from_name: "Rajendra Portfolio",
+          botcheck: formData.botcheck,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Failed to send message");
+      }
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+
+      setFormData({ name: "", email: "", phone: "", message: "", botcheck: "" });
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Couldn't send your message. Please try again or email me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section id="contact" className="section-padding relative" ref={ref}>
       {/* Background Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 max-w-[800px] w-full h-[400px] bg-primary/10 rounded-full blur-[120px]" />
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -82,9 +128,7 @@ export const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-            Get in Touch
-          </span>
+          <span className="section-eyebrow">// Get in Touch</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
             Let's Work Together
           </h2>
@@ -111,7 +155,7 @@ export const ContactSection = () => {
                 {contactInfo.map((info) => (
                   <div
                     key={info.label}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border"
+                    className="surface flex items-center gap-4 p-4 rounded-xl card-hover"
                   >
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                       <info.icon className="w-5 h-5 text-primary" />
@@ -146,7 +190,7 @@ export const ContactSection = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all card-hover"
+                    className="surface w-12 h-12 rounded-xl flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-[280ms] card-hover"
                     aria-label={social.label}
                   >
                     <social.icon size={20} />
@@ -164,13 +208,30 @@ export const ContactSection = () => {
           >
             <form
               onSubmit={handleSubmit}
-              className="p-8 rounded-2xl bg-card border border-border"
+              className="surface md:p-8 p-5 rounded-2xl"
             >
               <h3 className="text-xl font-semibold text-foreground mb-6">
                 Send a Message
               </h3>
               
               <div className="space-y-5">
+                {/* Honeypot — leave empty; bots fill it */}
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  className="hidden"
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  checked={!!formData.botcheck}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      botcheck: e.target.checked ? "true" : "",
+                    })
+                  }
+                />
+
                 <div>
                   <label
                     htmlFor="name"
@@ -181,13 +242,14 @@ export const ContactSection = () => {
                   <Input
                     id="name"
                     type="text"
+                    name="name"
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
                     required
-                    className="bg-secondary border-border focus:border-primary"
+                    autoComplete="name"
                   />
                 </div>
 
@@ -201,13 +263,37 @@ export const ContactSection = () => {
                   <Input
                     id="email"
                     type="email"
+                    name="email"
                     placeholder="john@example.com"
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
                     required
-                    className="bg-secondary border-border focus:border-primary"
+                    autoComplete="email"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
+                    Mobile Number{" "}
+                    <span className="text-muted-foreground font-normal">
+                      (optional)
+                    </span>
+                  </label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    name="phone"
+                    placeholder="+91 98765 43210"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    autoComplete="tel"
                   />
                 </div>
 
@@ -227,14 +313,13 @@ export const ContactSection = () => {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     required
-                    className="bg-secondary border-border focus:border-primary resize-none"
+                    className="resize-none"
                   />
                 </div>
 
                 <Button
                   type="submit"
                   variant="hero"
-                  size="lg"
                   className="w-full"
                   disabled={isSubmitting}
                 >

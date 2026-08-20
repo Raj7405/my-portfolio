@@ -17,9 +17,7 @@ export const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-            Career Journey
-          </span>
+          <span className="section-eyebrow">// Career Journey</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
             Work Experience
           </h2>
@@ -43,7 +41,7 @@ export const ExperienceSection = () => {
             >
               {/* Timeline Dot */}
               <div
-                className={`absolute left-0 md:left-1/2 top-0 w-4 h-4 rounded-full border-4 transform md:-translate-x-1/2 ${
+                className={`absolute -left-2 md:left-1/2 top-0 w-4 h-4 rounded-full border-4 transform md:-translate-x-1/2 ${
                   exp.isCurrent
                     ? "bg-primary border-primary animate-pulse-glow"
                     : "bg-background border-primary"
@@ -51,10 +49,10 @@ export const ExperienceSection = () => {
               />
 
               {/* Content Card */}
-              <div className="p-6 rounded-2xl bg-card border border-border card-hover">
+              <div className="surface p-6 rounded-2xl card-hover">
                 {/* Status Badge */}
                 {exp.isCurrent && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 font-mono text-primary text-xs font-medium mb-4 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.06)]">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                     Current Role
                   </span>
@@ -94,7 +92,7 @@ export const ExperienceSection = () => {
 
                 {/* Key Project */}
                 {exp.keyProject && (
-                  <div className="mt-6 pt-6 border-t border-border">
+                  <div className="mt-6 pt-6 border-t border-white/[0.06]">
                     <h4 className="text-sm font-semibold text-primary mb-3">
                       Key Project: {exp.keyProject.title}
                     </h4>

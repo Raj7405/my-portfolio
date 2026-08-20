@@ -1,5 +1,6 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { NAV_HEIGHT } from "@/constants/layout";
 import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -51,7 +52,10 @@ const ProjectDetail = () => {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
-        <main className="flex items-center justify-center min-h-[60vh]">
+        <main
+          className="flex items-center justify-center min-h-[60vh]"
+          style={{ paddingTop: NAV_HEIGHT }}
+        >
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
             <p className="text-muted-foreground">Loading project...</p>
@@ -66,7 +70,10 @@ const ProjectDetail = () => {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
-        <main className="flex items-center justify-center min-h-[60vh]">
+        <main
+          className="flex items-center justify-center min-h-[60vh]"
+          style={{ paddingTop: NAV_HEIGHT }}
+        >
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
             <p className="text-muted-foreground mb-4">The project you're looking for doesn't exist.</p>
@@ -81,7 +88,7 @@ const ProjectDetail = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main>
+      <main style={{ paddingTop: NAV_HEIGHT }}>
         {/* Header Image */}
         <div className="relative h-96 overflow-hidden">
           <img
@@ -102,7 +109,7 @@ const ProjectDetail = () => {
             </Button>
           </div>
           <div className="absolute top-4 right-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-background/80 backdrop-blur-sm text-xs font-medium text-foreground">
+            <span className="surface-chip inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium text-foreground">
               <Layers size={12} className="text-primary" />
               {project.category}
             </span>
@@ -148,7 +155,7 @@ const ProjectDetail = () => {
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 rounded-lg bg-secondary text-foreground font-medium"
+                  className="skill-badge"
                 >
                   {tech}
                 </span>

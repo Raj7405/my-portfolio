@@ -15,7 +15,7 @@ export const profile = {
   summary:
     "Software Engineer with 2+ years of experience building scalable SaaS applications using React.js, Next.js, TypeScript, Node.js, Express.js, REST APIs, and modern web technologies. Experienced in developing responsive frontend applications, building backend APIs, integrating databases, and collaborating across the software development lifecycle. Passionate about AI-assisted development, performance optimization, and delivering high-quality software solutions.",
   social: {
-    linkedin: "https://www.linkedin.com/in/rajendra-chaudhari-079",
+    linkedin: "https://www.linkedin.com/in/rajendra74/",
     github: "https://github.com/Raj7405",
     portfolio: SITE_URL,
   },

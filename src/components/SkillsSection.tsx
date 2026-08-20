@@ -17,7 +17,7 @@ export const SkillsSection = () => {
   const [selectedCertificate, setSelectedCertificate] = useState<(typeof certificates)[0] | null>(null);
 
   return (
-    <section id="skills" className="section-padding bg-card/30 relative" ref={ref}>
+    <section id="skills" className="section-padding section-muted relative" ref={ref}>
       <div className="absolute inset-0 grid-pattern opacity-30" />
       
       <div className="container mx-auto px-6 relative z-10">
@@ -28,9 +28,7 @@ export const SkillsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-            Technical Expertise
-          </span>
+          <span className="section-eyebrow">// Technical Expertise</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
             Skills & Technologies
           </h2>
@@ -45,7 +43,7 @@ export const SkillsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              className="p-6 rounded-2xl bg-card border border-border card-hover"
+              className="surface p-6 rounded-2xl card-hover"
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-5">
@@ -89,7 +87,7 @@ export const SkillsSection = () => {
               <div 
                 key={certificate.title} 
                 onClick={() => setSelectedCertificate(certificate)}
-                className="p-6 rounded-2xl bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/30 cursor-pointer card-hover"
+                className="surface p-6 rounded-2xl border-primary/25 cursor-pointer card-hover bg-gradient-to-r from-primary/[0.08] to-accent/[0.06]"
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">

@@ -25,7 +25,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-8 border-t border-border">
+    <footer className="py-8 border-t border-white/[0.06]">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo & Copyright */}
@@ -57,7 +57,7 @@ export const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="surface flex h-9 w-9 items-center justify-center rounded-xl text-muted-foreground transition-all duration-[280ms] hover:text-primary hover:border-primary/35"
                 aria-label={social.label}
               >
                 <social.icon size={18} />
