@@ -67,6 +67,7 @@ export const projects: Project[] = [
       "Optimized frontend performance using TanStack Query for API caching, background synchronization, and efficient server-state management.",
       "Collaborated across the full development lifecycle — API design, frontend implementation, debugging, testing, and deployment.",
     ],
+    liveLink: "https://mobile-medical-direct-website-theta.vercel.app/",
     proof: [
       { type: "image", url: "/projects-images/MMD-proof/home-service-screen.png", title: "Home — Service Selection" },
       { type: "image", url: "/projects-images/MMD-proof/doctor-listing-screen.png", title: "Doctor Listing" },
