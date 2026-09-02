@@ -40,16 +40,18 @@ export const ExperienceSection = () => {
               }`}
             >
               {/* Timeline Dot */}
-              <div
-                className={`absolute -left-2 md:left-1/2 top-0 w-4 h-4 rounded-full border-4 transform md:-translate-x-1/2 ${
-                  exp.isCurrent
-                    ? "bg-primary border-primary animate-pulse-glow"
-                    : "bg-background border-primary"
-                }`}
-              />
+              <div className="absolute -left-2 md:left-1/2 top-0 transform md:-translate-x-1/2 rounded-full bg-background">
+                <div
+                  className={`w-4 h-4 rounded-full border-4  ${
+                    exp.isCurrent
+                      ? "bg-primary border-primary animate-pulse-glow"
+                      : "bg-background border-primary"
+                  }`}
+                />
+              </div>
 
               {/* Content Card */}
-              <div className="surface p-6 rounded-2xl card-hover">
+              <div className="surface p-6 rounded-2xl card-hover ">
                 {/* Status Badge */}
                 {exp.isCurrent && (
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 font-mono text-primary text-xs font-medium mb-4 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.06)]">

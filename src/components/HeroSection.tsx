@@ -8,14 +8,9 @@ import { NAV_HEIGHT } from "@/constants/layout";
 export const HeroSection = () => {
   return (
     <section
-      className="relative flex min-h-screen items-center justify-center overflow-hidden noise-overlay"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden"
       style={{ paddingTop: NAV_HEIGHT }}
-    >
-      {/* Background Effects */}
-      <div className="absolute inset-0 grid-pattern opacity-50" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
-      
+    > 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Status Badge */}
