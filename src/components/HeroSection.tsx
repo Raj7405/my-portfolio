@@ -4,13 +4,19 @@ import { profile } from "@/content/profile";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { NAV_HEIGHT } from "@/constants/layout";
+import { lazy, Suspense } from "react";
+const HeroShader = lazy(() => import("./HeroShader"));
 
 export const HeroSection = () => {
   return (
     <section
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
       style={{ paddingTop: NAV_HEIGHT }}
-    > 
+    >
+      <Suspense fallback={<div className="absolute inset-0 bg-background" />}>
+        <HeroShader />
+      </Suspense>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-32 bg-gradient-to-t from-background to-transparent" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Status Badge */}
