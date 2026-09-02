@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import ResumePage from "./pages/Resume";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
+import BackgroundEffects from "./components/BackgroundEffects";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <BackgroundEffects  />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />

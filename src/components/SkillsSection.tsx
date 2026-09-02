@@ -17,7 +17,7 @@ export const SkillsSection = () => {
   const [selectedCertificate, setSelectedCertificate] = useState<(typeof certificates)[0] | null>(null);
 
   return (
-    <section id="skills" className="section-padding section-muted relative" ref={ref}>
+    <section id="skills" className="section-padding  relative" ref={ref}>
       <div className="absolute inset-0 grid-pattern opacity-30" />
       
       <div className="container mx-auto px-6 relative z-10">
